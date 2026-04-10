@@ -7,7 +7,7 @@ class Settings(BaseSettings):
     PROJECT_NAME: str = "Zhagaram Showroom Management"
 
     # ✅ Must come from ENV in production
-    DATABASE_URL: str = Field(default="sqlite:///./zhagaram.db")
+    DATABASE_URL: str
 
     # ✅ Change this (important)
     JWT_SECRET_KEY: str = Field(default="change-this-in-production")

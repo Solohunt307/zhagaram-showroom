@@ -1,6 +1,9 @@
 # create_tables.py
 
 from app.core.database import engine, Base
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # 🔥 IMPORT ALL MODELS (MANDATORY)
 from app.models.user import User

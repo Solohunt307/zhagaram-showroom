@@ -1,6 +1,6 @@
 /* ---------------- GLOBALS ---------------- */
 
-window.API = "http://127.0.0.1:8000";
+window.API = "https://zhagaram-api.onrender.com";
 
 window.token = localStorage.getItem("access_token");
 

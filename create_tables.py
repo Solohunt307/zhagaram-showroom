@@ -22,4 +22,9 @@ from app.models.vehicle import Vehicle
 # ✅ CREATE TABLES
 Base.metadata.create_all(bind=engine)
 
+print("Connecting to DB...")
+conn = engine.connect()
+print("✅ Connected successfully!")
+conn.close()
+
 print("✅ All tables created successfully in TiDB")

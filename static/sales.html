@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sales & Billing</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<header>
+  <div class="brand" onclick="location.href='dashboard.html'">
+    Zhagaram Showroom Management
+  </div>
+  <button class="logout-btn" onclick="logout()">Logout</button>
+</header>
+
+<div class="dashboard-container">
+
+<h2>Sales & Billing</h2>
+
+<!-- ================= TOP BAR ================= -->
+
+<div class="kpi-card">
+
+  <input id="saleSearch" placeholder="Search invoice / customer / product">
+
+  <input type="date" id="fromDate">
+  <input type="date" id="toDate">
+
+  <button id="applyFilterBtn">Apply</button>
+
+  <button id="exportCSVBtn">Export CSV</button>
+
+  <button onclick="showSaleForm()">➕ New Sale</button>
+
+</div>
+
+<!-- ================= SALES TABLE ================= -->
+
+<table border="1" width="100%">
+<thead>
+<tr>
+  <th>Invoice</th>
+  <th>Customer</th>
+  <th>Product</th>
+  <th>Qty</th>
+  <th>Order</th>
+  <th>Paid</th>
+  <th>Balance</th>
+  <th>Date</th>
+  <th>Actions</th>
+</tr>
+</thead>
+
+<tbody id="salesTable"></tbody>
+</table>
+
+<div id="salesPagination"></div>
+
+</div>
+
+<!-- ================= MODAL (NEW SALE) ================= -->
+
+<div id="saleModal" class="modal">
+
+  <div class="modal-content">
+
+    <span class="close-btn" onclick="hideSaleForm()">×</span>
+
+    <h3 id="saleFormTitle">New Sale</h3>
+
+    <form id="saleForm">
+
+      <label>Customer Name</label>
+      <input id="customerName" required>
+
+      <label>Phone</label>
+      <input id="phone" required>
+
+      <label>Address</label>
+      <input id="address">
+
+      <label>Product</label>
+      <select id="productSelect" required></select>
+
+      <label>Price</label>
+      <input id="price">
+
+      <label>Quantity</label>
+      <input type="number" id="qty" required>
+
+      <label>Order Amount</label>
+      <input type="number" id="orderAmount">
+
+      <label>Paid Amount</label>
+      <input type="number" id="paidAmount" required>
+
+      <label>Balance</label>
+      <input type="number" id="balanceAmount">
+
+      <label>Payment Type</label>
+      <select id="paymentType">
+        <option>UPI</option>
+        <option>CARD</option>
+        <option>CASH</option>
+        <option>BANK</option>
+      </select>
+
+      <label>Date</label>
+      <input type="date" id="saleDate" required>
+
+      <label>Received By</label>
+      <input id="receivedBy">
+
+      <label>Notes</label>
+      <textarea id="notes"></textarea>
+
+      <br><br>
+
+      <button type="submit">Save Sale</button>
+      <button type="button" onclick="hideSaleForm()">Cancel</button>
+
+    </form>
+
+  </div>
+
+</div>
+
+<script src="js/dashboard.js"></script>
+<script src="js/sales.js"></script>
+
+</body>
+</html>

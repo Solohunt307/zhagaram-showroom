@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sale Details</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<header>
+  <div class="brand" onclick="location.href='dashboard.html'">
+    Zhagaram Showroom Management
+  </div>
+  <button class="logout-btn" onclick="logout()">Logout</button>
+</header>
+
+<div class="dashboard-container">
+
+<h2>Sale Details</h2>
+
+<!-- ================= SUMMARY ================= -->
+
+<div class="kpi-card" id="saleSummary">
+
+  <p><b>Invoice:</b> <span id="invoice"></span></p>
+  <p><b>Customer:</b> <span id="customer"></span></p>
+  <p><b>Phone:</b> <span id="phone"></span></p>
+  <p><b>Address:</b> <span id="address"></span></p>
+
+  <p><b>Product:</b> <span id="product"></span></p>
+  <p><b>Quantity:</b> <span id="qty"></span></p>
+
+  <p><b>Order:</b> ₹<span id="order"></span></p>
+  <p><b>Paid:</b> ₹<span id="paid"></span></p>
+  <p><b>Balance:</b> ₹<span id="balance"></span></p>
+
+  <p><b>Date:</b> <span id="date"></span></p>
+
+  <button onclick="viewInvoice()">Print Invoice</button>
+
+</div>
+
+<hr>
+
+<!-- ================= PAYMENT HISTORY ================= -->
+
+<h3>Payment History</h3>
+
+<table border="1" width="100%">
+<thead>
+<tr>
+  <th>Date</th>
+  <th>Payment Type</th>
+  <th>Amount</th>
+  <th>Received By</th>
+</tr>
+</thead>
+
+<tbody id="paymentTable"></tbody>
+</table>
+
+<hr>
+
+<!-- ================= ADD PAYMENT ================= -->
+
+<h3>Add Payment</h3>
+
+<div class="kpi-card">
+
+<input id="payAmount" type="number" placeholder="Amount">
+
+<select id="payMode">
+  <option value="UPI">UPI</option>
+  <option value="CARD">CARD</option>
+  <option value="CASH">CASH</option>
+  <option value="BANK">BANK</option>
+</select>
+
+<input id="payReceivedBy" placeholder="Received By">
+
+<button onclick="addPayment()">Add Payment</button>
+
+</div>
+
+</div>
+
+<script src="js/dashboard.js"></script>
+<script src="js/sales_details.js"></script>
+
+</body>
+</html>

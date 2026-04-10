@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Employee Activities</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<header>
+  <div class="brand" onclick="location.href='dashboard.html'">
+    Zhagaram Showroom Management
+  </div>
+  <button class="logout-btn" onclick="logout()">Logout</button>
+</header>
+
+<div class="dashboard-container">
+
+<h2>Employee Activities</h2>
+
+<div class="kpi-card">
+
+  <input id="searchBox" placeholder="Employee name">
+
+  <input type="date" id="fromDate">
+  <input type="date" id="toDate">
+
+  <button onclick="loadActivities(1)">Filter</button>
+
+  <button onclick="exportCSV()">Export CSV</button>
+
+</div>
+
+<table border="1" width="100%">
+<thead>
+<tr>
+  <th>Name</th>
+  <th>Total Hours</th>
+  <th>Salary / Month</th>
+  <th>Paid</th>
+  <th>Date</th>
+  <th>Payment</th>
+  <th>Actions</th>
+</tr>
+</thead>
+
+<tbody id="activityTable"></tbody>
+</table>
+
+<!-- ================= EDIT MODAL ================= -->
+
+<div id="editModal" class="modal" style="display:none">
+
+  <div class="modal-content">
+
+    <h3>Edit Employee Activity</h3>
+
+    <input type="hidden" id="editId">
+
+    <label>Employee</label>
+    <input id="editName" disabled>
+
+    <label>Total Hours</label>
+    <input id="editHours">
+
+    <label>Salary / Month</label>
+    <input id="editSalary">
+
+    <label>Salary Paid</label>
+    <input id="editPaid">
+
+    <label>Date</label>
+    <input type="date" id="editDate">
+
+    <label>Payment Type</label>
+    <select id="editPayType">
+      <option>UPI</option>
+      <option>Cash</option>
+      <option>Cheque</option>
+      <option>Bank</option>
+    </select>
+
+    <div style="margin-top:15px">
+      <button onclick="updateActivity()">Update</button>
+      <button onclick="closeModal()">Cancel</button>
+    </div>
+
+  </div>
+</div>
+
+
+<div id="pagination"></div>
+
+</div>
+
+<script src="js/dashboard.js"></script>
+<script src="js/employee_activities.js"></script>
+
+</body>
+</html>

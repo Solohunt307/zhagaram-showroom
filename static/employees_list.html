@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Employees</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<header>
+  <div class="brand" onclick="location.href='dashboard.html'">
+    Zhagaram Showroom Management
+  </div>
+  <button class="logout-btn" onclick="logout()">Logout</button>
+</header>
+
+<div class="dashboard-container">
+
+<h2>Employees Master</h2>
+
+<div class="kpi-card">
+
+  <input id="searchBox" placeholder="Search employee">
+
+  <button onclick="loadEmployees(1)">Search</button>
+
+  <button onclick="exportEmployees()">Export CSV</button>
+
+</div>
+
+<table border="1" width="100%">
+<thead>
+<tr>
+  <th>Emp ID</th>
+  <th>Name</th>
+  <th>Address</th>
+  <th>File</th>
+  <th>Actions</th>
+</tr>
+</thead>
+
+<tbody id="empTable"></tbody>
+</table>
+
+<div id="pagination"></div>
+
+</div>
+
+<script src="js/dashboard.js"></script>
+<script src="js/employees_list.js"></script>
+
+</body>
+</html>

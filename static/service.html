@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Service & Workshop</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<header>
+  <div class="brand" onclick="location.href='dashboard.html'">
+    Zhagaram Showroom Management
+  </div>
+  <button class="logout-btn" onclick="logout()">Logout</button>
+</header>
+
+<div class="dashboard-container">
+
+<h2>Service & Workshop</h2>
+
+<div class="top-bar">
+
+  <input id="searchBox" placeholder="Search Ticket / Customer / Product">
+
+  <input type="date" id="fromDate">
+  <input type="date" id="toDate">
+
+  <button onclick="loadTickets()">Apply</button>
+
+  <button onclick="exportCSV()">Export CSV</button>
+
+  <button class="primary-btn"
+    onclick="location.href='service_new.html'">
+    + New Ticket
+  </button>
+
+</div>
+
+<table border="1" width="100%">
+
+<thead>
+<tr>
+  <th>Ticket</th>
+  <th>Customer</th>
+  <th>Product</th>
+  <th>Description</th>
+  <th>Complaint</th>
+  <th>Mobile</th>
+  <th>Technician</th>
+  <th>Resolved</th>
+  <th>Unresolved</th>
+  <th>Bill No</th>
+  <th>Received By</th>
+  <th>Completed</th>
+  <th>Cost</th>
+  <th>Paid</th>
+  <th>Balance</th>
+  <th>Payment</th>
+  <th>Status</th>
+  <th>Created</th>
+  <th>Closed</th>
+  <th>Actions</th>
+</tr>
+</thead>
+
+<tbody id="ticketTable"></tbody>
+
+</table>
+
+<div id="pagination"></div>
+
+</div>
+
+<script src="js/dashboard.js"></script>
+<script src="js/service.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Create Service Ticket</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<header>
+  <div class="brand" onclick="location.href='dashboard.html'">
+    Zhagaram Showroom Management
+  </div>
+  <button class="logout-btn" onclick="logout()">Logout</button>
+</header>
+
+<div class="dashboard-container">
+
+<h2>Create New Ticket</h2>
+
+<form id="ticketForm" enctype="multipart/form-data">
+
+<h3>Customer Info</h3>
+
+<input name="customer_name" placeholder="Customer Name">
+
+<input name="product_name" placeholder="Product Name">
+
+<textarea
+  name="product_description"
+  placeholder="Product Description"></textarea>
+
+<textarea name="complaint" placeholder="Complaint"></textarea>
+
+<input name="mobile" placeholder="Mobile">
+
+<input name="technician" placeholder="Technician">
+
+<select name="status">
+  <option value="OPEN">Open</option>
+  <option value="HOLD">Hold</option>
+  <option value="IN_PROGRESS">In Progress</option>
+  <option value="RESOLVED">Resolved</option>
+</select>
+
+<h3>Resolution</h3>
+
+<textarea
+  name="resolved_complaint"
+  placeholder="Resolved Complaint"></textarea>
+
+<textarea
+  name="unresolved_complaint"
+  placeholder="Unresolved Complaint"></textarea>
+
+<input name="bill_no" placeholder="Bill No">
+
+<input name="received_by" placeholder="Vehicle Received By">
+
+<input
+  type="date"
+  name="service_completed_date"
+  id="serviceCompletedDate">
+
+<h3>Service Cost</h3>
+
+<input
+  id="serviceCost"
+  name="service_cost"
+  type="number"
+  step="0.01"
+  placeholder="Service Cost">
+
+<input
+  id="amountPaid"
+  name="amount_paid"
+  type="number"
+  step="0.01"
+  placeholder="Amount Paid">
+
+<input
+  id="balance"
+  name="balance"
+  type="number"
+  step="0.01"
+  placeholder="Balance"
+  readonly>
+
+<select name="payment_mode">
+  <option value="">-- Payment Mode --</option>
+  <option>UPI</option>
+  <option>Cash</option>
+  <option>Cheque</option>
+  <option>Bank</option>
+</select>
+
+<input
+  type="date"
+  name="payment_date"
+  id="paymentDate">
+
+<h3>Attachment</h3>
+
+<input type="file" name="file">
+
+<br><br>
+
+<button type="submit" class="primary-btn">
+  Create Ticket
+</button>
+
+<button
+  type="button"
+  onclick="location.href='service.html'">
+ Cancel
+</button>
+
+</form>
+
+</div>
+
+<script src="js/dashboard.js"></script>
+<script src="js/service.js"></script>
+
+</body>
+</html>

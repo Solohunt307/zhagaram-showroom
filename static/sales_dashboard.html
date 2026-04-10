@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sales Dashboard</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<header>
+  <div class="brand" onclick="location.href='dashboard.html'">
+    Zhagaram Showroom
+  </div>
+</header>
+
+<div class="dashboard-container">
+
+<h2>📊 Daily Sales Dashboard</h2>
+
+<div class="kpi-card">
+
+  <input type="date" id="dashDate">
+
+  <button onclick="loadDaily()">Load</button>
+
+</div>
+
+<!-- KPI BOXES -->
+
+<div class="grid-4">
+
+  <div class="kpi-box">Total Sales<br><b id="totalSales">0</b></div>
+  <div class="kpi-box">Paid<br><b id="totalPaid">0</b></div>
+  <div class="kpi-box">Balance<br><b id="totalBalance">0</b></div>
+  <div class="kpi-box">Invoices<br><b id="totalInvoices">0</b></div>
+
+</div>
+
+<hr>
+
+<h3>🔥 Top Products</h3>
+
+<table border="1" width="60%">
+<thead>
+<tr>
+<th>Product</th>
+<th>Qty</th>
+<th>Amount</th>
+</tr>
+</thead>
+<tbody id="topProducts"></tbody>
+</table>
+
+</div>
+
+<script src="js/dashboard.js"></script>
+<script src="js/sales_dashboard.js"></script>
+
+</body>
+</html>

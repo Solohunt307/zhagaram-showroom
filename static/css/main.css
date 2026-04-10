@@ -1,0 +1,560 @@
+/* ================================
+   GLOBAL RESET
+================================ */
+
+* {
+  box-sizing: border-box;
+  font-family: "Inter","Segoe UI",system-ui;
+}
+
+body {
+  margin: 0;
+  background: #f4f7fb;
+  color: #0f172a;
+}
+
+/* ================================
+   HEADER / BRAND BAR
+================================ */
+
+header {
+  height: 72px;
+  background: linear-gradient(90deg,#0f2d52,#0b5ed7,#22d3ee);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 34px;
+  box-shadow: 0 8px 30px rgba(14,165,233,.35);
+}
+
+.brand {
+  font-size: 22px;
+  font-weight: 800;
+  color: white;
+  letter-spacing: .4px;
+  cursor: pointer;
+  padding: 6px 14px;
+  border-radius: 14px;
+  background: rgba(255,255,255,.12);
+  backdrop-filter: blur(6px);
+}
+
+/* ================================
+   LOGOUT
+================================ */
+
+.logout-btn {
+  background: linear-gradient(135deg,#ff5f6d,#ffc371);
+  border: none;
+  color: black;
+  padding: 10px 18px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+/* ================================
+   PAGE WRAPPER
+================================ */
+
+.dashboard-container {
+  max-width: 1500px;
+  margin: 30px auto;
+  padding: 0 26px;
+}
+
+/* ================================
+   LOGIN
+================================ */
+
+.login-page {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle,#dbeafe,#f8fafc);
+}
+
+.login-box {
+  width: 390px;
+  background: white;
+  padding: 42px;
+  border-radius: 20px;
+  box-shadow: 0 40px 80px rgba(59,130,246,.25);
+}
+
+.login-box h2 {
+  text-align: center;
+  font-weight: 800;
+}
+
+.login-box input {
+  width: 100%;
+  margin: 14px 0;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid #c7d2fe;
+}
+
+.login-box button {
+  background: linear-gradient(135deg,#2563eb,#22d3ee);
+  border: none;
+  padding: 14px;
+  font-weight: 700;
+  border-radius: 14px;
+  cursor: pointer;
+  color: white;
+}
+
+/* ================================
+   KPI DASHBOARD
+================================ */
+
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+  gap: 26px;
+  margin-bottom: 35px;
+}
+
+.kpi {
+  background: linear-gradient(145deg,#ffffff,#f0f7ff);
+  padding: 26px;
+  border-radius: 22px;
+  position: relative;
+  box-shadow:
+    0 20px 40px rgba(59,130,246,.25),
+    inset 0 0 0 rgba(255,255,255,.5);
+  border-left: 6px solid #38bdf8;
+}
+
+.kpi span {
+  font-size: 34px;
+  font-weight: 800;
+  background: linear-gradient(90deg,#2563eb,#22d3ee);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* ================================
+   SHOWROOM MODULE GRID
+================================ */
+
+.module-grid {
+  margin-top: 28px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+  gap: 26px;
+}
+
+.module-card {
+  background: white;
+  border-radius: 22px;
+  padding: 30px;
+  cursor: pointer;
+  text-align: center;
+  font-weight: 700;
+  font-size: 16px;
+  border: 2px solid transparent;
+  transition: .3s;
+  box-shadow: 0 16px 40px rgba(0,0,0,.08);
+}
+
+.module-card:hover {
+  border-color:#38bdf8;
+  transform: translateY(-6px);
+  box-shadow: 0 28px 60px rgba(59,130,246,.35);
+}
+
+/* ================================
+   FORM CARDS
+================================ */
+
+.kpi-card {
+  background: white;
+  padding: 26px;
+  border-radius: 22px;
+  box-shadow: 0 18px 45px rgba(0,0,0,.1);
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap: 16px;
+}
+
+input,
+select,
+textarea {
+  background: #f9fafb;
+  border: 1px solid #c7d2fe;
+  color: #0f172a;
+  padding: 12px 14px;
+  border-radius: 12px;
+}
+
+textarea {
+  min-height: 90px;
+}
+
+button {
+  background: linear-gradient(135deg,#2563eb,#22d3ee);
+  color: white;
+  border: none;
+  border-radius: 14px;
+  padding: 12px 20px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+/* ================================
+   TABLES
+================================ */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: white;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 18px 40px rgba(0,0,0,.08);
+}
+
+thead {
+  background: linear-gradient(90deg,#e0f2fe,#bae6fd);
+}
+
+th, td {
+  padding: 14px;
+}
+
+tbody tr:hover {
+  background: #f0f9ff;
+}
+
+/* ================================
+   LOW STOCK
+================================ */
+
+#lowStockList li {
+  background: #fee2e2;
+  color: #991b1b;
+  padding: 10px;
+  border-radius: 10px;
+  list-style: none;
+  margin: 6px 0;
+}
+
+/* ================================
+   SHOWROOM SELECT
+================================ */
+
+.showroom-card {
+  background: white;
+  padding: 32px;
+  border-radius: 26px;
+  margin: 20px;
+  cursor: pointer;
+  display: inline-block;
+  width: 260px;
+  text-align: center;
+  font-weight: 700;
+  border: 2px solid #38bdf8;
+  box-shadow: 0 22px 50px rgba(59,130,246,.3);
+  transition: .3s;
+}
+
+.showroom-card:hover {
+  transform: translateY(-6px);
+}
+
+/* ================================
+   MOBILE
+================================ */
+
+@media(max-width:768px){
+  header {padding:0 18px}
+  .module-grid {grid-template-columns:1fr}
+}
+
+
+
+.cancelled-row {
+  background: #ffe0e0;
+  color: #900;
+}
+
+
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  width: 420px;
+  border-radius: 8px;
+}
+
+.modal-content input,
+.modal-content select {
+  width: 100%;
+  margin: 6px 0;
+  padding: 6px;
+}
+
+
+.container {
+    width: 90%;
+    margin: auto;
+}
+
+.card {
+    background: #fff;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.grid-3 {
+    display: flex;
+    gap: 20px;
+}
+
+.grid-3 .card {
+    flex: 1;
+    text-align: center;
+}
+
+button {
+    padding: 8px 12px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* ================================
+   FORM POSITION (TOP SPACING)
+================================ */
+.sale-form-top {
+  margin-bottom: 20px;
+}
+
+
+/* ================================
+   FORM LABELS (UX IMPROVEMENT)
+================================ */
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1e3a8a; /* dark blue */
+  margin-bottom: 5px;
+}
+
+
+/* ================================
+   MODAL FORM (CLEAN LOOK)
+================================ */
+.modal-content {
+  padding: 30px;
+  width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 14px;
+}
+
+
+/* ================================
+   FIELD SPACING
+================================ */
+.modal-content .form-group {
+  margin-bottom: 12px;
+}
+
+
+/* ================================
+   INPUT DESIGN (PROFESSIONAL)
+================================ */
+input, select, textarea {
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  padding: 10px;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37,99,235,0.2);
+}
+
+
+/* ================================
+   BUTTON SPACING
+================================ */
+form button {
+  margin-top: 10px;
+}
+
+
+/* ================================
+   PAYMENT TABLE SPACING
+================================ */
+#paymentTable {
+  margin-top: 10px;
+}
+
+
+/* ================================
+   CANCELLED ROW (NO STRIKE)
+================================ */
+.cancelled-row {
+  background: #ffe0e0;
+  color: #b91c1c;
+  font-weight: 600;
+}
+
+/* ================================
+   USER MANAGEMENT LAYOUT
+================================ */
+
+.user-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* ================================
+   CARD UI
+================================ */
+
+.user-card {
+  background: white;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,.08);
+}
+
+/* ================================
+   SECTION TITLE
+================================ */
+
+.section-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+/* ================================
+   TOP ACTION BUTTONS
+================================ */
+
+.user-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* ================================
+   BUTTON VARIANTS
+================================ */
+
+.btn-secondary {
+  background: #e0f2fe;
+  color: #0369a1;
+}
+
+.btn-danger {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+/* ================================
+   USER TABLE
+================================ */
+
+.user-table td {
+  font-size: 14px;
+}
+
+.user-table .actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* ================================
+   HIDE / SHOW PANEL
+================================ */
+
+.hidden {
+  display: none;
+}
+
+/* ================================
+   OPTIONAL SMOOTH TRANSITION
+================================ */
+
+.user-list-panel {
+  transition: all 0.3s ease;
+}
+
+/* ================================
+   ROLE BADGES (PRO TOUCH)
+================================ */
+
+.role-admin {
+  color: #1d4ed8;
+  font-weight: 700;
+}
+
+.role-manager {
+  color: #059669;
+  font-weight: 700;
+}
+
+/* ================================
+   RESPONSIVE (MOBILE)
+================================ */
+
+@media(max-width: 768px) {
+  .user-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.user-mgmt-btn {
+  background: linear-gradient(135deg,#7c3aed,#22d3ee);
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.user-mgmt-btn:hover {
+  opacity: 0.9;
+}

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Purchases</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<header>
+  <div class="brand" onclick="location.href='dashboard.html'">
+    Zhagaram Showroom Management
+  </div>
+  <button class="logout-btn" onclick="logout()">Logout</button>
+</header>
+
+<div class="dashboard-container">
+
+<h2>Purchases</h2>
+
+<!-- ================= VENDORS ================= -->
+
+<h3>Vendors</h3>
+
+<div class="kpi-card">
+
+<input id="vendorName" placeholder="Name *">
+<input id="vendorMobile" placeholder="Mobile *">
+<input id="vendorEmail" placeholder="Email">
+<input id="vendorGST" placeholder="GST">
+<input id="vendorLocation" placeholder="Location *">
+
+<button id="vendorBtn">Add Vendor</button>
+
+</div>
+
+<table border="1" width="100%">
+<thead>
+<tr>
+<th>Name</th>
+<th>Mobile</th>
+<th>Email</th>
+<th>GST</th>
+<th>Location</th>
+<th>Actions</th>
+</tr>
+</thead>
+<tbody id="vendorTable"></tbody>
+</table>
+
+<div id="vendorPagination"></div>
+
+<hr>
+
+<!-- ================= PURCHASE ================= -->
+
+<h3>New Purchase</h3>
+
+<form id="purchaseForm" class="kpi-card">
+
+<select id="productSelect" name="product_id" required></select>
+
+<select id="vendorSelect" name="vendor_id" required></select>
+
+<input type="number" id="qty" name="quantity" placeholder="Quantity *" required>
+
+<input id="color" name="color" placeholder="Color">
+
+<input type="number" step="0.01" id="amount" name="amount" placeholder="Amount *" required>
+
+<select id="paymentMode" name="payment_mode">
+  <option value="UPI">UPI</option>
+  <option value="Cash">Cash</option>
+  <option value="Cheque">Cheque</option>
+  <option value="Bank Transfer">Bank Transfer</option>
+</select>
+
+<input id="shipment" name="shipment_mode" placeholder="Shipment mode">
+
+<input type="date" id="pdate" name="purchase_date" required>
+
+<input type="file" id="file" name="file">
+
+<textarea id="notes" name="notes" placeholder="Notes"></textarea>
+
+<button type="submit">Submit Purchase</button>
+
+</form>
+
+<hr>
+
+<!-- ================= PURCHASE LIST ================= -->
+
+<h3>Purchase Orders</h3>
+
+<div class="kpi-card">
+
+<input id="purchaseSearch" placeholder="Search product/vendor">
+
+<input type="date" id="fromDate">
+<input type="date" id="toDate">
+
+<button id="applyFilterBtn">Apply Filter</button>
+
+<button id="exportCSVBtn">Export CSV</button>
+
+</div>
+
+<table border="1" width="100%">
+<thead>
+<tr>
+<th>Product</th>
+<th>Vendor</th>
+<th>Qty</th>
+<th>Amount</th>
+<th>Date</th>
+<th>Actions</th>
+</tr>
+</thead>
+
+<tbody id="purchaseTable"></tbody>
+</table>
+
+<div id="purchasePagination"></div>
+
+</div>
+
+<script src="js/dashboard.js"></script>
+<script src="js/purchases.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<header>
+  <div class="brand" onclick="goToDashboard()">
+    Zhagaram Showroom Management
+  </div>
+
+  <button class="logout-btn" onclick="logout()">Logout</button>
+</header>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>User Management</title>
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+
+<div class="dashboard-container">
+
+  <!-- =========================
+       TOP ACTIONS
+  ========================== -->
+  <div class="user-actions">
+    <button onclick="toggleUserList()">View Users</button>
+  </div>
+
+  <!-- =========================
+       MAIN CONTAINER
+  ========================== -->
+  <div class="user-container">
+
+    <!-- =========================
+         CREATE USER FORM
+    ========================== -->
+    <div class="user-card">
+      <div class="section-title">Create User</div>
+
+      <div class="form-group">
+        <label>Name</label>
+        <input type="text" id="name" />
+      </div>
+
+      <div class="form-group">
+        <label>Username</label>
+        <input type="text" id="username" />
+      </div>
+      
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" id="password" />
+      </div>
+
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" id="email" />
+      </div>
+
+      <div class="form-group">
+        <label>Role</label>
+        <select id="role" onchange="handleRoleChange()">
+          <option value="ADMIN">ADMIN</option>
+          <option value="MANAGER">MANAGER</option>
+        </select>
+      </div>
+
+      <div class="form-group" id="showroomField" style="display:none;">
+        <label>Showroom</label>
+        <select id="showroom"></select>
+      </div>
+
+      <br />
+
+      <button onclick="createUser()">Create User</button>
+    </div>
+
+    <!-- =========================
+         USER LIST PANEL
+    ========================== -->
+    <div class="user-card user-list-panel hidden" id="userList">
+
+      <div style="display:flex; justify-content:space-between;">
+        <div class="section-title">Users</div>
+        <button onclick="toggleUserList()">Close</button>
+      </div>
+
+      <table class="user-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Username</th>
+            <th>Role</th>
+            <th>Showroom</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+
+        <tbody id="userTable"></tbody>
+      </table>
+
+    </div>
+
+  </div>
+
+</div>
+
+<script src="js/user.js"></script>
+
+</body>
+</html>

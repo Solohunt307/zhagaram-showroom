@@ -1,0 +1,221 @@
+Hey buddy.
+I am gonna create a new application. 
+The Application name is Zhagaram Showroom Management.
+This is basically an internal software for an EV sales and service company.
+Goal of this software is to manage the operations and revenue of the EV showroom.
+
+User roles:
+Admin
+Manager
+Technician
+
+Structure of this software:
+
+Basically for this showroom they have multiple branches(2 for now)
+
+For Admin:
+
+Starting should be a login page asking for username and the password And Forgot password option to reset the password(Once they click on that it will ask for the mail id which they gave while adding their info in the employees list. Once they fill and submit they will get a new password over that mail. Once the credentials are entered, next page should have the showroom options to select(Vellore Showroom, Gudiyatham Showroom)
+
+Under these options there should be a button "Consolidated Reports"(On clicking on this button the values which are present in the Reports and Analysis Module should be displayed in a consolidated way of both the showrooms)
+
+Once either of the showroom options are selected, it should enter the dashboard of that showroom.(The activities and data of both the showrooms should be separate and should never get mingled)
+
+The dashboard should consist of the below structure:
+
+Showroom Activities(Heading)
+Under this, the below mentioned list should be there. These options should be a clickable buttons on clicking on it where it will take to that particular module.
+
+1. Products&Inventory:
+2. Purchases
+3. Sales&Billing
+4. Customers
+5. Service&Workshop
+6. Employee Activity
+7. Accounting&GST
+8. Reports&Analysis
+9. Expenses
+
+Above these buttons i need a dashboard which refreshes daily. the dashboard should consist of Total Sales, Gross Profit, Tickets(It should also show Active: and Closed:). The Tickets counts alone should not get reset to 0 daily. It should always show the overall tickets count with its status(active/closed)
+
+On the top of this dashboard, I need the software name Zhagaram Showroom Management in the header portion. It should be clickable, whenever I click on this it should bring me back to the home page that is where the system modules are shown. And a logout button should be there at the top right corner of every page.On clicking on logout, it should ask for cofnrimation and logout from the system.
+
+Now lets go to modules one by one.
+
+Common items:
+Every modules should have a search option, date filter, export button(on clicking it should export records as csv), in every page if the items are more then ten then there should be pagination(for 1 page there should be only 10 records). If any module has more than 1 section, each section should follow this pagination structure.
+
+1. Products&Inventory:
+
+On clicking on this button it should enter into the Products&Inventory page. It should consists of 3 sections. 1 is to add a new product, section 2 is to list the products which are added here and the next section is the low threshold section(if any product is going below the threshold limit those products should be listed here with the product quantity(Product name,quantity)
+
+Add Product Section:
+The Add Product section should consist of the below fields
+Product Name
+HSN*
+Model*
+Variant*
+Color*
+Purchase Price
+Sale Price*
+Tax Rate
+Initial Stock Qty
+Low Stock Threshold
+Description
+
+-> which ever i marked with * are should be mandatory fields.
+
+After entering all these details on clicking on the Add Product button the product should get added and listed in the below section(Product Inventory)
+
+Product Inventory section:
+Here the products which are added should get listed. in the below order:
+HSN ,Model,Variant,Color,Purchase Price,Sale Price,Tax Rate,Initial Stock Qty,Low Stock Threshold,Description,Actions
+
+The Actions column should consist of 2 buttons. 1 is Edit and 1 is Delete. On clicking on the edit button the product details should populate in the fields and the user should be able to edit and submit this(when the details are populated in the fields, the update button should be there to update). On clicking on Delete button it should ask for confirmation(Are you sure you want to delete this item?) if selected yes then delete it if no then go back.
+
+Low Threshold Section:
+If any item is going below the threshold limit then those items should be listed here(Product name,Current stock). Later if they got the stock and editing the product details and updating the product stock count, then it should get removed from this section.
+
+On adding the details it should get stored in the mysql database with relevant columns and references.
+
+Common items:
+Every modules should have a search option, date filter, export button(on clicking it should export records as csv), in every page if the items are more then ten then there should be pagination(for 1 page there should be only 10 records)
+
+
+2.Purchases:
+On clicking on Purchases button, it should enter into purchases page.
+It should consist of Vendor list, Purchases list
+
+Vendors:
+Here the Vendor list should be there in this section(Fields order should be Name,Mobile,Mail,GST No,Location). on top right of the Vendors section there should be a button Add vendor. On clicking it, a screen should appear in the same page asking for Name,Mobile,Mail,GST No,Location.(All except GST No are mandatory)After entering these details on clicking on Add the vendor details should appear in the Vendors list. In the vendors list also there should be a column for Actions. The Actions column should consist of 2 buttons. 1 is Edit and 1 is Delete. On clicking on the edit button the product details should populate in the fields and the user should be able to edit and submit this(when the details are populated in the fields, the update button should be there to update). On clicking on Delete button it should ask for confirmation(Are you sure you want to delete this item?) if selected yes then delete it if no then go back.
+
+Purchases"
+Here the following fields should be there - Items(drop down(these details should be fetched from the products module(Product name))),Quantity(these details should be fetched from the products module(Product name))),Color(these details should be fetched from the products module(Product name))),Vendor name(these details should be fetched from the Vendors section(Vendor Name))),Date(Calender),Payment Mode(Dropdown(UPI,Cash,Cheque,Bank Transfer),Amount(Text),Shipment mode(Text),Notes(Text area),File(the file which we ipload when we add the purchase details). When we click on New purchases a screen should populate in the same page and ask for these details and if we click on submit the purchase details should be listed in the Purchase orders list in this section. In the list of purchase orders The Actions column should consist of 2 buttons. 1 is Edit and 1 is Delete. On clicking on the edit button the product details should populate in the fields and the user should be able to edit and submit this(when the details are populated in the fields, the update button should be there to update). On clicking on Delete button it should ask for confirmation(Are you sure you want to delete this item?) if selected yes then delete it if no then go back.
+In the purchases section there should also be a file upload option(any type can be uploaded)but this option should not be a mandatory field while adding new purchase
+
+On adding the details it should get stored in the mysql database with relevant columns and references.
+
+Common items:
+Every modules should have a search option, date filter, export button(on clicking it should export records as csv), in every page if the items are more then ten then there should be pagination(for 1 page there should be only 10 records)
+
+3.Sales&Billing:
+On clicking on Purchases button, it should enter into Sales&Billing page.
+
+This page should consists of the sales records.  Customer name, Product name, quantity,Order Amount, Paid, Payment Type, Balance,Date,Invoice Number, Phone number, Address,Actions(Actions column should consist of 3 buttons. 1 is Edit and 1 is Delete and 1 is view. On clicking on the edit button the product details should populate in the fields and the user should be able to edit and submit this(when the details are populated in the fields, the update button should be there to update). On clicking on Delete button it should ask for confirmation(Are you sure you want to delete this item?) if selected yes then delete it if no then go back. On clicking the view button, it should enter into the sale details page.On clicking on view button it should enter in to the sales details of that sale.
+In the sale details page, there should be a Print Invoice button, the invoice should get printed as pdf
+
+The sales records should be listed in the above order. On the top right New Sale Button should be there. On clicking it, it should enter to the next page asking for the Customer name(Text), Product name(Dropdown (from products module) get the reference from the products&inventory module), quantity(Text),Order Amount(Text), Paid(Text), Payment Type(Dropdown(UPI,CARD,CASH,Bank), Balance(auto populate by calculating (order amount - paid)),Date(Calender),Invoice Number(Auto Generate for each invoice), Phone number(Text), Address(Text),Received by(Text) , Notes(Text). In that same page there should be a Payment history table, in case if the customer is making half of the payment first and later will pay the remaining half. So in this payment history table there should be Data,Payment Type, Amount,Received by fields.
+
+On making every sale, the customer details should get auto saved in the customers module.
+
+On adding the details it should get stored in the mysql database with relevant columns and references.
+
+Common items:
+Every modules should have a search option, date filter, export button(on clicking it should export records as csv), in every page if the items are more then ten then there should be pagination(for 1 page there should be only 10 records)
+
+4. Customer:
+
+On clicking this button the customers page should open. It should consists of list of customers in order of Customer Name,Address,Email,Phone number,Actions.  The Actions column should consist of 2 buttons. 1 is Edit and 1 is Delete. On clicking on the edit button the product details should populate in the fields and the user should be able to edit and submit this(when the details are populated in the fields, the update button should be there to update). On clicking on Delete button it should ask for confirmation(Are you sure you want to delete this item?) if selected yes then delete it if no then go back. On the top right corner there should be a button Add New Customer, on clicking it, in the same page another box should populate and ask for Name,Address,Email,Phone number (email alone is not manadotry, other fields should be mandatory) after filling these details on clicking the Add customer button the details should get saved in the customers list.
+
+On adding the details it should get stored in the mysql database with relevant columns and references.
+
+Common items:
+Every modules should have a search option, date filter, export button(on clicking it should export records as csv), in every page if the items are more then ten then there should be pagination(for 1 page there should be only 10 records)
+
+5. Service&Workshop:
+
+On clicking this button it should enter into Service&Workshop page. It should consists of the following columns listing down the tickets - Ticket ID, Customer Name, Product Name,Complaint,Technician,Created date,closed date,Ticket status,Actions The Actions column should consist of 2 buttons. 1 is Edit and 1 is Delete. On clicking on the edit button the product details should populate in the fields and the user should be able to edit and submit this(when the details are populated in the fields, the update button should be there to update). On clicking on Delete button it should ask for confirmation(Are you sure you want to delete this item?) if selected yes then delete it if no then go back.
+
+On the top right there should be a button New Ticket. On clicking it should enter into another page ticket creation. There should be fields Customer name(Dropdown (from customers module)),Product name(Dropdown (from products module)), product description(Text),Complaints(Text),Mobile number(Auto populate fetch from customers module, this should be a text area if required the user should be able to edit this),Technician(Dropdown (from Employee Activity module)),Resolved complaints(Text),Unresolved complaints(Text),Bill No(Text),Service completed date(calender),Vehicle received by(Text),File upload,Total service cost(under this total service cost need the following fields - Service cost(Text),Amount paid(Text),Balance(Text),Payment mode(dropdown(UPI,Cash,Cheque,Bank)),Date(Calender))
+any of the fields in the create new ticket should not be a mandatory field.
+
+On adding the details it should get stored in the mysql database with relevant columns and references.
+
+Common items:
+Every modules should have a search option, date filter, export button(on clicking it should export records as csv), in every page if the items are more then ten then there should be pagination(for 1 page there should be only 10 records)
+
+6. Employee activity:
+On clicking this button it should enter into Employee activity page.  This should consists of the employee activities list, the following columns should be there - Name, Total working hours, Salary per month, Salary Paid,Date, Payment type((UPI,Cash,Cheque,Bank)),Actions.The Actions column should consist of 2 buttons. 1 is Edit and 1 is Delete. On clicking on the edit button the product details should populate in the fields and the user should be able to edit and submit this(when the details are populated in the fields, the update button should be there to update). On clicking on Delete button it should ask for confirmation(Are you sure you want to delete this item?) if selected yes then delete it if no then go back.(Employees added for that particular showroom should be present only there and should not be listed in any other showroom)
+
+
+In this page I need 3 buttons 1 is Create new Employee, 1 is Create new Activity and 1 is list employees. On clciking on Create new employee a screen should appear in the same page asking for Emp ID(Text),Name(Text),Address(Text),Mobile(Text),Email(Text),Role(Dropdown-Admin, Manager, Technician),File upload(to upload any kind of file) after entering these details they can click on the Add button and then the employee will get added to the list employees. On clicking on the Create New activity, a screen should appear in the same page asking to fill the fields of Name(Text), Total working hours(Text), Salary per month(Text), Salary Paid(Text),Date(Calender), Payment type(Dropdown(UPI,Cash,Cheque,Bank))after entering these details they can click on the Add button and the record will be added to the employee activities list. On clicking the list employees button it should open the list of employees in the next page in the order - Emp ID(Text),Name(Text),Address(Text),File(to download that file which was uploaded earlier),Actions. The Actions column should consist of 2 buttons. 1 is Edit and 1 is Delete. On clicking on the edit button the product details should populate in the fields and the user should be able to edit and submit this(when the details are populated in the fields, the update button should be there to update). On clicking on Delete button it should ask for confirmation(Are you sure you want to delete this item?) if selected yes then delete it if no then go back.
+
+On adding the details it should get stored in the mysql database with relevant columns and references.
+
+Common items:
+Every modules should have a search option, date filter, export button(on clicking it should export records as csv), in every page if the items are more then ten then there should be pagination(for 1 page there should be only 10 records)
+
+7. Accounting&GST
+On clicking this button it should enter into Accounting&GST page. Here need 2 sections. 1 is Total invoices and 1 is Accounting. In the total invoices  section there should be a date filter from and to, invoice filter (range from and to of invoice number). On setting up these filters all the sales will be listed during that range. These should be a button - Export(on clicking it, all the invoices of the filtered records should be exported as a single pdf.
+In the Accounting section i need the same date filter from and to, invoice filter (range from and to of invoice number).below these filter options there should be the value for the following - Total number of purchases,Total number of Sales,Total amount of purchase, Total amount of sales, Total amount of expenses, Net Profit. The sum for all these values should be fetched from that particular module where we already have that data.
+
+Common items:
+Every modules should have a search option, date filter, export button(on clicking it should export records as csv), in every page if the items are more then ten then there should be pagination(for 1 page there should be only 10 records)
+
+On adding the details it should get stored in the mysql database with relevant columns and references.
+
+8. Reports and Analysis:
+On clicking this button it should enter into Reports and Analysis page. I need the below reports to get generated.
+
+1. Sales & Revenue Analysis
+These reports tell the user how much money is coming in and which products are driving that growth.
+Daily and Monthly Sales Summary: A high-level view of total revenue, number of invoices generated, and average transaction value.
+Top-Selling Products: A ranking of products by quantity sold or revenue generated. You can break this down by Model, Variant, or Color.
+Sales by Location and Showroom: Since your app supports multiple locations, this compares which showroom is performing better.
+Sales Representative Performance: Tracks which employee is closing the most sales (useful for commissions).
+
+2.Advanced Analytics 
+Profitability Analysis: Calculating the net profit after deducting purchase costs and taxes from the total sales.
+Demand Forecasting: Using historical sales data to predict how much stock they might need for the next month.
+Customer Buying Patterns: Identifying repeat customers and their preferred product categories.
+
+Implementation Tip: Data Visualizations
+Instead of just showing tables, use a library like Chart.js or Plotly to display:
+Line Charts for sales trends over time.
+Pie Charts for stock distribution by category/model.
+Bar Charts for comparing performance across different showrooms.
+
+On adding the details it should get stored in the mysql database with relevant columns and references.
+
+Common items:
+Every modules should have a search option, date filter, export button(on clicking it should export records as csv), in every page if the items are more then ten then there should be pagination(for 1 page there should be only 10 records)
+
+9. Expenses:
+On clicking this button it should enter into Expenses page. This should consists of 3 sections. Monthly expenses, Daily expenses, Overall expenses.
+
+In the monthly expenses section, there should be the following Fields asking for value - Rent,Salary,EB,Office expense,Miscelleneuous(all should be of text fields)
+In the daily expenses section the following should be there - Expense Description(Text),Date(Calender),Done by, Amount, Submit(Button). There should be an add button in this section on clicking it will add another row with the same fields so we can add more of the expenses and submit at once.
+In the overall Expense it should consist of all the expense from day 1. There should be a date filter, search button, export button in this section.
+
+On adding the details it should get stored in the mysql database with relevant columns and references.
+
+Common items:
+Every modules should have a search option, date filter, export button(on clicking it should export records as csv), in every page if the items are more then ten then there should be pagination(for 1 page there should be only 10 records)
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+All the above which I explained was for the Admin only. there is another role - Manager. For this role when they login the functionality should be slightly differ.
+
+Once the manager enter their username and password, they should directly enter into their respective showroom dashboard. They should not get the page to select the showroom. 
+The Manager should be able to view only the below mentioned modules in the dashboard:
+1. Products&Inventory:
+2. Purchases
+3. Sales&Billing
+4. Customers
+5. Service&Workshop
+
+there is another role - Technician. For this role when they login the functionality should be slightly differ.
+
+Once the Technician enter their username and password, they should directly enter into their respective showroom dashboard. They should not get the page to select the showroom. 
+The Manager should be able to view only the below mentioned modules in the dashboard:
+1. Service&Workshop
+
+
+The applications should be in a very bright premium theme, the fonts, the designs, the structure, mobile friendly. layouts should be sharp and elite 
+For frontend I am gonna use html,css,js, backend logic i will use fastapi
+For database lets go with MySQL only.
+
+each and every data which i am saving/submitting should get saved exactly in the MySQL database.
+
+give me the folder structure for this project
+tell me the list of files which i need to create under each folder
+tell me the tables i should create in the MySQL db(i cant run manual queries so using the backend codes sqlalchemy this should get created.

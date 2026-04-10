@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reports</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        body {
+            font-family: Arial;
+            margin: 20px;
+            background: #f5f6fa;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        .filters {
+            margin-bottom: 20px;
+        }
+
+        input, button {
+            padding: 8px;
+            margin-right: 10px;
+        }
+
+        .card {
+            background: white;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table th, table td {
+            padding: 8px;
+            border: 1px solid #ddd;
+        }
+
+        table th {
+            background: #333;
+            color: white;
+        }
+
+        canvas {
+            max-height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h2>📊 Reports & Analysis</h2>
+
+<div class="filters">
+    From: <input type="date" id="fromDate">
+    To: <input type="date" id="toDate">
+    <button onclick="loadAll()">Apply</button>
+</div>
+
+<div class="card">
+    <h3>Sales Summary</h3>
+    <p id="summary"></p>
+</div>
+
+<div class="card">
+    <h3>Sales Trend</h3>
+    <canvas id="trendChart"></canvas>
+</div>
+
+<div class="card">
+    <h3>Top Products</h3>
+    <button onclick="exportCSV('top_products')">Export CSV</button>
+    <table>
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Qty</th>
+                <th>Revenue</th>
+            </tr>
+        </thead>
+        <tbody id="productTable"></tbody>
+    </table>
+</div>
+
+<div class="card">
+    <h3>Employee Performance</h3>
+    <button onclick="exportCSV('employees')">Export CSV</button>
+    <table>
+        <thead>
+            <tr>
+                <th>Employee</th>
+                <th>Invoices</th>
+                <th>Revenue</th>
+            </tr>
+        </thead>
+        <tbody id="employeeTable"></tbody>
+    </table>
+</div>
+
+<div class="card">
+    <h3>Customer Patterns</h3>
+    <button onclick="exportCSV('customers')">Export CSV</button>
+    <table>
+        <thead>
+            <tr>
+                <th>Customer</th>
+                <th>Orders</th>
+            </tr>
+        </thead>
+        <tbody id="customerTable"></tbody>
+    </table>
+</div>
+
+<script src="/static/js/reports.js"></script>
+
+</body>
+</html>

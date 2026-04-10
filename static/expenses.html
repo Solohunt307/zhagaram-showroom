@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Expenses</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<header>
+  <div class="brand" onclick="location.href='dashboard.html'">
+    Zhagaram Showroom Management
+  </div>
+  <button class="logout-btn" onclick="logout()">Logout</button>
+</header>
+
+<div class="dashboard-container">
+
+<h2>Expenses</h2>
+
+<!-- ================= MONTHLY ================= -->
+
+<section class="card">
+
+<h3>Monthly Expenses</h3>
+
+<div class="grid-5">
+
+<input id="rent" placeholder="Rent">
+<input id="salary" placeholder="Salary">
+<input id="eb" placeholder="EB">
+<input id="office" placeholder="Office Expense">
+<input id="misc" placeholder="Miscellaneous">
+
+<button onclick="saveMonthly()">Save Monthly</button>
+
+</div>
+</section>
+
+<hr>
+
+<!-- ================= DAILY ================= -->
+
+<section class="card">
+
+<h3>Daily Expenses</h3>
+
+<table width="100%" border="1">
+
+<thead>
+<tr>
+<th>Description</th>
+<th>Date</th>
+<th>Done By</th>
+<th>Amount</th>
+<th>Action</th>
+</tr>
+</thead>
+
+<tbody id="dailyBody"></tbody>
+
+</table>
+
+<button onclick="addDailyRow()">➕ Add Row</button>
+<button onclick="submitDaily()">Submit Daily Expenses</button>
+
+</section>
+
+<hr>
+
+<!-- ================= OVERALL ================= -->
+
+<section class="card">
+
+<h3>Overall Expenses</h3>
+
+<input id="searchBox" placeholder="Search">
+<input type="date" id="fromDate">
+<input type="date" id="toDate">
+
+<button onclick="loadExpenses()">Search</button>
+<button onclick="exportCSV()">Export CSV</button>
+
+<table border="1" width="100%">
+
+<thead>
+<tr>
+<th>Category</th>
+<th>Description</th>
+<th>Amount</th>
+<th>Date</th>
+<th>Actions</th>
+</tr>
+</thead>
+
+<tbody id="expenseTable"></tbody>
+
+</table>
+
+<div id="pagination"></div>
+
+</section>
+
+</div>
+
+<script src="js/dashboard.js"></script>
+<script src="js/expenses.js"></script>
+
+</body>
+</html>

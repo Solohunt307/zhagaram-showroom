@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Employees</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<header>
+  <div class="brand" onclick="location.href='dashboard.html'">
+    Zhagaram Showroom Management
+  </div>
+  <button class="logout-btn" onclick="logout()">Logout</button>
+</header>
+
+<div class="dashboard-container">
+
+  <h2>Employees Module</h2>
+
+  <!-- ================= TOOLBAR ================= -->
+
+  <div class="toolbar">
+    <button onclick="showEmployeeForm()">➕ Create New Employee</button>
+    <button onclick="showActivityForm()">📝 Create New Activity</button>
+    <button onclick="showEmployeeList()">📋 List Employees</button>
+    <button onclick="showActivityList()">📊 Activity List</button>
+  </div>
+
+  <hr>
+
+  <!-- ================= ADD EMPLOYEE ================= -->
+
+  <div id="employeeFormBox" style="display:none">
+
+    <h3>Add / Edit Employee</h3>
+
+    <form id="empForm" enctype="multipart/form-data">
+
+      <input type="hidden" id="editingEmpId">
+
+      <input name="emp_code" id="empCode" placeholder="Emp ID" required>
+      <input name="name" id="empName" placeholder="Name" required>
+      <input name="address" id="empAddress" placeholder="Address">
+      <input name="mobile" id="empMobile" placeholder="Mobile" required>
+      <input name="email" id="empEmail" placeholder="Email">
+
+      <select name="role" id="empRole">
+        <option value="ADMIN">ADMIN</option>
+        <option value="MANAGER">MANAGER</option>
+        <option value="TECHNICIAN">TECHNICIAN</option>
+      </select>
+
+      <input type="file" name="file">
+
+      <button type="submit">Save Employee</button>
+      <button type="button" onclick="hideAll()">Cancel</button>
+
+    </form>
+
+  </div>
+
+  <!-- ================= CREATE ACTIVITY ================= -->
+
+  <div id="activityFormBox" style="display:none">
+
+    <h3>Add / Edit Activity</h3>
+
+    <input type="hidden" id="editingActId">
+
+    <select id="empId"></select>
+    <input id="hours" placeholder="Total Hours">
+    <input id="salary" placeholder="Salary / Month">
+    <input id="paid" placeholder="Salary Paid">
+    <input type="date" id="actDate">
+
+    <select id="payType">
+      <option value="UPI">UPI</option>
+      <option value="Cash">Cash</option>
+      <option value="Cheque">Cheque</option>
+      <option value="Bank">Bank</option>
+    </select>
+
+    <br><br>
+
+    <button onclick="submitActivity()">Save Activity</button>
+    <button onclick="hideAll()">Cancel</button>
+
+  </div>
+
+  <!-- ================= EMPLOYEE LIST ================= -->
+
+  <div id="employeeListBox" style="display:none">
+
+    <h3>Employees</h3>
+
+    <input id="empSearch" placeholder="Search..." onkeyup="loadEmployees()">
+
+    <button onclick="exportEmployeesCSV()">⬇ Export CSV</button>
+
+    <table border="1" width="100%">
+      <thead>
+        <tr>
+          <th>Emp ID</th>
+          <th>Name</th>
+          <th>Address</th>
+          <th>Mobile</th>
+          <th>Role</th>
+          <th>File</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="empTable"></tbody>
+    </table>
+
+    <div id="empPagination"></div>
+
+  </div>
+
+  <!-- ================= ACTIVITY LIST ================= -->
+
+  <div id="activityListBox" style="display:none">
+
+    <h3>Employee Activities</h3>
+
+    <input id="actSearch" placeholder="Search by name..." onkeyup="loadActivities()">
+
+    <button onclick="exportActivitiesCSV()">⬇ Export CSV</button>
+
+    <table border="1" width="100%">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Total Hours</th>
+          <th>Salary</th>
+          <th>Paid</th>
+          <th>Date</th>
+          <th>Payment</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="activityTable"></tbody>
+    </table>
+
+    <div id="activityPagination"></div>
+
+  </div>
+
+</div>
+
+<script src="js/dashboard.js"></script>
+<script src="/static/js/employees.js"></script>
+
+</body>
+</html>

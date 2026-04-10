@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Customers</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<header>
+  <div class="brand" onclick="location.href='dashboard.html'">
+    Zhagaram Showroom Management
+  </div>
+  <button class="logout-btn" onclick="logout()">Logout</button>
+</header>
+
+<div class="dashboard-container">
+
+<h2>Customers</h2>
+
+<!-- ================= TOP BAR ================= -->
+
+<div class="kpi-card">
+
+  <input id="searchBox" placeholder="Search name / phone">
+
+  <input type="date" id="fromDate">
+  <input type="date" id="toDate">
+
+  <button onclick="loadCustomers(1)">Apply</button>
+
+  <button onclick="exportCustomersCSV()">Export CSV</button>
+
+</div>
+
+<hr>
+
+<!-- ================= FORM ================= -->
+
+<h3 id="formTitle">Add New Customer</h3>
+
+<div class="kpi-card">
+
+<input id="custName" placeholder="Name *">
+<input id="custPhone" placeholder="Phone *">
+<input id="custEmail" placeholder="Email">
+<input id="custAddr" placeholder="Address *">
+
+<br><br>
+
+<button id="submitCustomerBtn" onclick="saveCustomer()">Add Customer</button>
+
+<button
+  id="cancelEditBtn"
+  style="display:none"
+  onclick="resetForm()"
+>
+Cancel
+</button>
+
+</div>
+
+<hr>
+
+<!-- ================= TABLE ================= -->
+
+<table border="1" width="100%">
+<thead>
+<tr>
+  <th>Name</th>
+  <th>Phone</th>
+  <th>Email</th>
+  <th>Address</th>
+  <th>Actions</th>
+</tr>
+</thead>
+
+<tbody id="customerTable"></tbody>
+</table>
+
+<div id="pagination"></div>
+
+</div>
+
+<script src="js/dashboard.js"></script>
+<script src="js/customers.js"></script>
+
+</body>
+</html>

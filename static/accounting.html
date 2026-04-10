@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Accounting & GST</title>
+
+  <!-- FIXED CSS -->
+  <link rel="stylesheet" href="/static/css/main.css">
+</head>
+<body>
+
+<header>
+  <div class="brand" onclick="location.href='dashboard.html'">
+    Zhagaram Showroom Management
+  </div>
+  <button class="logout-btn" onclick="logout()">Logout</button>
+</header>
+
+<div class="dashboard-container">
+
+<h2>Accounting & GST</h2>
+
+<!-- ================= INVOICES ================= -->
+
+<section class="card">
+
+<h3>Total Invoices</h3>
+
+<input type="date" id="fromDate">
+<input type="date" id="toDate">
+
+<input id="invFrom" placeholder="Invoice From">
+<input id="invTo" placeholder="Invoice To">
+
+<button onclick="loadInvoices()">Search</button>
+<button onclick="exportPDF()">Export PDF</button>
+
+<table border="1" width="100%">
+<thead>
+<tr>
+<th>Invoice</th>
+<th>Date</th>
+<th>Amount</th>
+</tr>
+</thead>
+
+<tbody id="invoiceTable"></tbody>
+</table>
+
+<div id="pagination"></div>
+
+</section>
+
+<hr>
+
+<!-- ================= SUMMARY ================= -->
+
+<section class="card">
+
+<h3>Accounting Summary</h3>
+
+<button onclick="loadSummary()">Load Summary</button>
+
+<div id="summaryBox"></div>
+
+</section>
+
+</div>
+
+<!-- COMMON JS -->
+<script src="/static/js/dashboard.js"></script>
+
+<!-- FIXED JS -->
+<script src="/static/js/accounting.js"></script>
+
+</body>
+</html>

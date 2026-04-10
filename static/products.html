@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Products</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<header>
+  <div class="brand" onclick="location.href='dashboard.html'">
+    Zhagaram Showroom Management
+  </div>
+  <button class="logout-btn" onclick="logout()">Logout</button>
+</header>
+
+<div class="dashboard-container">
+
+<h2>Products & Inventory</h2>
+
+<!-- ADD PRODUCT -->
+<h3>Add Product</h3>
+
+<div class="kpi-card">
+  <input id="product_name" placeholder="Product Name">
+  <input id="hsn" placeholder="HSN">
+  <input id="model" placeholder="Model">
+  <input id="variant" placeholder="Variant">
+  <input id="color" placeholder="Color">
+  <input id="sale_price" placeholder="Sale Price">
+  <input id="stock_qty" placeholder="Initial Stock">
+  <input id="threshold" placeholder="Low Stock Threshold">
+  <textarea id="description" placeholder="Description"></textarea>
+  <button id="addProductBtn">Add Product</button>
+</div>
+
+<hr>
+
+<!-- LIST -->
+<h3>Inventory</h3>
+<input id="searchBox" placeholder="Search" onkeyup="loadProducts()">
+
+<input type="date" id="fromDate">
+<input type="date" id="toDate">
+
+<button onclick="exportCSV()">Export CSV</button>
+
+<table border="1" width="100%">
+<thead>
+<tr>
+  <th>Name</th>
+  <th>HSN</th>
+  <th>Model</th>
+  <th>Variant</th>
+  <th>Color</th>
+  <th>Purchase Price</th>
+  <th>Sale Price</th>
+  <th>Tax Rate</th>
+  <th>Stock Qty</th>
+  <th>Low Threshold</th>
+  <th>Description</th>
+  <th>Actions</th>
+</tr>
+</thead>
+<tbody id="productTable"></tbody>
+</table>
+
+<div id="pagination"></div>
+
+<h3>Low Stock</h3>
+<ul id="lowStockList"></ul>
+
+</div>
+
+<script src="js/dashboard.js"></script>
+<script src="js/products.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Zhagaram Dashboard</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<header>
+
+    <button class="user-mgmt-btn" onclick="goToUserManagement()">
+    User Management
+  </button>
+
+  </div>
+
+  <div class="brand" onclick="goHome()">Zhagaram Showroom Management</div>
+  <button class="logout-btn" onclick="logout()">Logout</button>
+
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+
+</header>
+
+<h2>Dashboard</h2>
+
+
+
+<div class="kpi-grid">
+  <div class="kpi">Total Sales<br><span id="totalSales">--</span></div>
+
+  <div class="kpi">Gross Profit<br><span id="grossProfit">--</span></div>
+
+  <div class="kpi">Total Expenses<br><span id="totalExpenses">--</span></div>
+
+  <div class="kpi">Net Profit<br><span id="netProfit">--</span></div>
+
+  <div class="kpi">
+    Service Tickets<br>
+    Active: <span id="activeTickets">--</span> |
+    Resolved: <span id="closedTickets">--</span>
+  </div>
+</div>
+
+
+<h3>Showroom Activities</h3>
+
+<div class="module-grid">
+
+  <div class="module-card" onclick="goModule('products.html')">
+    Products & Inventory
+  </div>
+
+  <div class="module-card" onclick="goModule('purchases.html')">
+    Purchases
+  </div>
+
+  <div class="module-card" onclick="goModule('sales.html')">
+    Sales & Billing
+  </div>
+
+  <div class="module-card" onclick="goModule('customers.html')">
+    Customers
+  </div>
+
+  <div class="module-card" onclick="goModule('service.html')">
+    Service & Workshop
+  </div>
+
+  <div class="module-card" onclick="goModule('employees.html')">
+    Employee Activity
+  </div>
+
+  <div class="module-card" onclick="goModule('accounting.html')">
+    Accounting & GST
+  </div>
+
+  <div class="module-card" onclick="goModule('reports.html')">
+    Reports & Analysis
+  </div>
+
+  <div class="module-card" onclick="goModule('expenses.html')">
+    Expenses
+  </div>
+
+</div>
+
+<h3>Daily Sales</h3>
+
+<div class="kpi-card">
+  <canvas id="dailySalesChart" height="120"></canvas>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+<script src="/static/js/dashboard-home.js"></script>
+</body>
+</html>

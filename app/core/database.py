@@ -2,12 +2,14 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
 from app.core.config import settings
 
-# ✅ Use ENV variable (TiDB in production)
-DATABASE_URL = settings.DATABASE_URL
-
 engine = create_engine(
-    DATABASE_URL,
-    pool_pre_ping=True
+    settings.DATABASE_URL,
+    pool_pre_ping=True,
+    connect_args={
+        "ssl": {
+            "ca": "ca.pem"
+        }
+    }
 )
 
 SessionLocal = sessionmaker(
@@ -17,11 +19,3 @@ SessionLocal = sessionmaker(
 )
 
 Base = declarative_base()
-
-
-def get_db():
-    db = SessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()

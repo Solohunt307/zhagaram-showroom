@@ -1,4 +1,4 @@
-const API = "http://127.0.0.1:8000";
+const API = "https://zhagaram-api.onrender.com";
 const token = localStorage.getItem("access_token");
 
 if (!token) location.href = "login.html";

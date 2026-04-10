@@ -1,6 +1,6 @@
 from sqlalchemy import create_engine
 
-DATABASE_URL = "mysql+pymysql://3TDtmcbjnmwrtwJ.root:kq7m601QHJy8ONhE@gateway01.ap-southeast-1.prod.aws.tidbcloud.com:4000/zhagaram_db?ssl_ca=<CA_PATH>&ssl_verify_cert=true&ssl_verify_identity=true"
+DATABASE_URL = "DATABASE_URL=mysql+pymysql://3TDtmcbjnmwrtwJ.root:kq7m601QHJy8ONhE@gateway01.ap-southeast-1.prod.aws.tidbcloud.com:4000/zhagaram_db"
 
 try:
     engine = create_engine(DATABASE_URL)
